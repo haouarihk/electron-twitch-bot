@@ -8,6 +8,7 @@ html {
 
 p {
     max-width: 100%;
+    text-indent: -100em;
 }
 
 img {
