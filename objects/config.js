@@ -6,4 +6,7 @@ const config = {
     CHANNEL_NAME: process.env.CHANNEL_NAME,
     CLIENT_ID: process.env.CLIENT_ID
 }
+if (!config.BOT_USERNAME) {
+    throw "YOU NEED TO FILL .ENV FILE"
+}
 module.exports = config
