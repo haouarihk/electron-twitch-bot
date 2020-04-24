@@ -4,6 +4,8 @@ const config = require("./objects/config")
 const AllInOne = require("./objects/allinone");
 const Line = require("./objects/line")
 const getData = require("./objects/requestHandler")
+var ding = new Audio('./sounds/din.mp3');
+
 const ourFullData = new AllInOne();
 
 // Define configuration options
@@ -32,6 +34,7 @@ function onMessageHandler(target, context, msg, self) {
 
     getData(context["user-id"])
         .then((dt) => {
+
             addCom(context["username"], msg, dt.data.logo, "black")
 
         })
@@ -51,4 +54,16 @@ function addCom(name, text, img, nameColor) {
     let newCom = new Line(name, text, img, nameColor);
     ourFullData.lines.unshift(newCom)
     document.getElementById("root").innerHTML = ourFullData.render()
+        //playSound(0)
+
+}
+
+
+
+function playSound(e) {
+    // switch (e) {
+    // default:
+    ding.play();
+    //   break;
+    //}
 }

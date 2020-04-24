@@ -1,11 +1,22 @@
-const { app, BrowserWindow } = require("electron")
+const { app, BrowserWindow, screen } = require("electron")
+
+
 
 function createWindow() {
+    let displays = screen.getAllDisplays()
+    let width;
+    for (var i in displays) {
+        width += displays[i].bounds.width;
+    }
     let win = new BrowserWindow({
         width: 420,
         height: 1000,
+        x: width - 600,
+        y: 0,
         resizable: false,
-        webPreferences: { nodeIntegration: true }
+        webPreferences: { nodeIntegration: true },
+        alwaysOnTop: true,
+        darkTheme: true
     })
     win.loadFile('./index.html')
     win.setAlwaysOnTop(true, "floating");
