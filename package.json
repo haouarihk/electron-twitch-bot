@@ -1,0 +1,20 @@
+{
+  "name": "electron-twitch-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^8.2.3"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "custom-env": "^2.0.1",
+    "dotenv": "^8.2.0",
+    "tmi.js": "^1.5.0"
+  }
+}
